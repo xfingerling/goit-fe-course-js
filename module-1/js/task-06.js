@@ -1,12 +1,13 @@
 'use strict';
 
 let total = 0;
+let condition = true;
 
-while (true) {
+while (condition) {
     let input = +prompt('Введите число', '');
 
     if (input === 0) {
-        break;
+        condition = false;
     } else if (isNaN(input)) {
         alert('Было введено не число, попробуйте еще раз');
         continue;
