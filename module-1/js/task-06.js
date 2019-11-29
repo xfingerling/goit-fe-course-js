@@ -1,21 +1,22 @@
 'use strict';
 
 let total = 0;
-let condition = true;
+let input;
 
-while (condition) {
-    let input = +prompt('Введите число', '');
+do {
+    input = prompt('Введите число', '');
+    const number = Number(input);
 
-    if (input === 0) {
-        condition = false;
-    } else if (isNaN(input)) {
-        alert('Было введено не число, попробуйте еще раз');
+    if (Number.isNaN(number)) {
+        alert('Было введено не число, попробуйте еще раз', '');
         continue;
     }
 
-    total += input;
+    total += number;
+} while (input !== null);
+
+if (total == 0) {
+    alert('Отменено пользователем');
+} else {
+    alert(`Общая сумма чисел равна ${total}`);
 }
-
-let message = `Общая сумма чисел равна ${total}`;
-
-alert(message);
