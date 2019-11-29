@@ -1,36 +1,44 @@
 'use strict';
 
+const costDeliveryСhina = 100;
+const costDeliveryChile = 250;
+const costDeliveryAustralia = 170;
+const costDeliveryIndia = 80;
+const costDeliveryJamaica = 120;
+
 let deliveryСountry = prompt('Укажите страну доставки', 'Украина');
-let message;
-let costOfDelivery;
 
-deliveryСountry = deliveryСountry.toLowerCase();
-
-switch (deliveryСountry) {
+switch (deliveryСountry.toLowerCase()) {
     case 'китай':
-        costOfDelivery = 100;
+        alert(
+            `Доставка в ${deliveryСountry} будет стоить ${costDeliveryСhina} кредитов`,
+        );
         break;
 
     case 'чили':
-        costOfDelivery = 250;
+        alert(
+            `Доставка в ${deliveryСountry} будет стоить ${costDeliveryChile} кредитов`,
+        );
         break;
 
     case 'австралия':
-        costOfDelivery = 170;
+        alert(
+            `Доставка в ${deliveryСountry} будет стоить ${costDeliveryAustralia} кредитов`,
+        );
         break;
 
     case 'индия':
-        costOfDelivery = 80;
+        alert(
+            `Доставка в ${deliveryСountry} будет стоить ${costDeliveryIndia} кредитов`,
+        );
         break;
 
     case 'ямайка':
-        costOfDelivery = 120;
+        alert(
+            `Доставка в ${deliveryСountry} будет стоить ${costDeliveryJamaica} кредитов`,
+        );
         break;
 
     default:
-        message = 'В вашей стране доставка не доступна';
-        alert(message);
+        alert('В вашей стране доставка не доступна');
 }
-
-message = `Доставка в ${deliveryСountry} будет стоить ${costOfDelivery} кредитов`;
-alert(message);
