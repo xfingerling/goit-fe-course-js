@@ -1,14 +1,15 @@
 'use strict';
 
-const findBestEmployee = function(employees) {
-    let maxTasks = 0;
-    let stafName;
+function topSalary(salaries) {
+    let maxSalary = 0;
+    let stafName = null;
 
-    for (let name in employees) {
-        if (employees[name] > maxTasks) {
-            maxTasks = employees[name];
+    for (const [name, salary] of Object.entries(salaries)) {
+        if (maxSalary < salary) {
+            maxSalary = salary;
             stafName = name;
         }
     }
+
     return stafName;
-};
+}
