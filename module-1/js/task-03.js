@@ -6,7 +6,7 @@ const messageWrong = 'Доступ запрещен, неверный парол
 
 const ADMIN_PASSWORD = 'jqueryismyjam';
 
-let userPass = prompt('Введите пароль', '');
+const userPass = prompt('Введите пароль', '');
 
 if (userPass === null || userPass === '') {
     alert(messageCancel);
