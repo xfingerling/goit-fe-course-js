@@ -1,7 +1,7 @@
 'use strict';
 
-let total = 100;
-let ordered = 50;
+const total = 100;
+const ordered = 50;
 
 if (ordered > total) {
     alert('Недостаточно товаров на складе');

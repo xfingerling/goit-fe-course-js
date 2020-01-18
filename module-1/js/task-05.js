@@ -8,7 +8,11 @@ const costDeliveryJamaica = 120;
 
 let deliveryСountry = prompt('Укажите страну доставки', 'Украина');
 
-switch (deliveryСountry.toLowerCase()) {
+if (deliveryСountry !== null) {
+    deliveryСountry = deliveryСountry.toLowerCase();
+}
+
+switch (deliveryСountry) {
     case 'китай':
         alert(
             `Доставка в ${deliveryСountry} будет стоить ${costDeliveryСhina} кредитов`,
@@ -37,6 +41,10 @@ switch (deliveryСountry.toLowerCase()) {
         alert(
             `Доставка в ${deliveryСountry} будет стоить ${costDeliveryJamaica} кредитов`,
         );
+        break;
+
+    case null:
+        alert('Отменено пользователем');
         break;
 
     default:

@@ -15,8 +15,4 @@ do {
     total += number;
 } while (input !== null);
 
-if (total == 0) {
-    alert('Отменено пользователем');
-} else {
-    alert(`Общая сумма чисел равна ${total}`);
-}
+alert(`Общая сумма чисел равна ${total}`);

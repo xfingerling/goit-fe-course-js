@@ -8,7 +8,7 @@ const ADMIN_PASSWORD = 'jqueryismyjam';
 
 const userPass = prompt('Введите пароль', '');
 
-if (userPass === null || userPass === '') {
+if (userPass === null) {
     alert(messageCancel);
 } else if (userPass === ADMIN_PASSWORD) {
     alert(messageWellcome);
