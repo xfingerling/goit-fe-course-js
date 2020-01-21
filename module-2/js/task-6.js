@@ -14,11 +14,11 @@ do {
         continue;
     }
 
-    numbers.push(input);
+    numbers.push(+input);
 } while (input !== null);
 
 for (const number of numbers) {
-    total += +number;
+    total += number;
 }
 
 if (numbers.length === 0) {
