@@ -1,17 +1,18 @@
 'use strict';
 
-const messageCancel = 'Отменено пользователем!';
-const messageWellcome = 'Добро пожаловать!';
-const messageWrong = 'Доступ запрещен, неверный пароль!';
+let message;
 
 const ADMIN_PASSWORD = 'jqueryismyjam';
 
 const userPass = prompt('Введите пароль', '');
 
 if (userPass === null) {
-    alert(messageCancel);
+    message = 'Отменено пользователем!';
+    alert(message);
 } else if (userPass === ADMIN_PASSWORD) {
-    alert(messageWellcome);
+    message = 'Добро пожаловать!';
+    alert(message);
 } else {
-    alert(messageWrong);
+    message = 'Доступ запрещен, неверный пароль!';
+    alert(message);
 }
