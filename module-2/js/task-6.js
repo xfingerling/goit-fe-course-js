@@ -11,16 +11,19 @@ do {
     if (Number.isNaN(number)) {
         alert('Было введено не число, попробуйте еще раз');
         continue;
+    } else if (input === '' || input === null) {
+        continue;
     }
 
     numbers.push(number);
-} while (input !== null || input === '');
+    console.log(numbers);
+} while (input !== null);
 
-for (let number of numbers) {
+for (const number of numbers) {
     total += number;
 }
 
-if (total == 0) {
+if (numbers.length === 0) {
     alert('Отменено пользователем');
 } else {
     alert(`Общая сумма чисел равна ${total}`);
