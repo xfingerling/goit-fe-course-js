@@ -7,8 +7,6 @@ const quantityDroids = prompt('Сколько дроидов вы хотите �
 
 if (quantityDroids === null) {
     alert('Отменено пользователем!');
-} else if (quantityDroids === '') {
-    alert('Вы ничего не ввели');
 } else {
     const totalPrice = quantityDroids * pricePerDroid;
 
