@@ -5,14 +5,17 @@ let input;
 
 do {
     input = prompt('Введите число', '');
-    const number = Number(input);
 
-    if (Number.isNaN(number)) {
+    if (input === null) {
+        break;
+    }
+
+    if (Number.isNaN(+input)) {
         alert('Было введено не число, попробуйте еще раз', '');
         continue;
     }
 
-    total += number;
+    total += +input;
 } while (input !== null);
 
 alert(`Общая сумма чисел равна ${total}`);
