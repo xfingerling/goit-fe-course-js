@@ -5,3 +5,5 @@ const logItems = function(array) {
         console.log(`${i + 1} - ${array[i]}`);
     }
 };
+
+logItems(['Mango', 'Poly', 'Ajax', 'Lux', 'Jay', 'Kong']);

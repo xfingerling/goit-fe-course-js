@@ -12,3 +12,5 @@ const findLongestWord = function(string) {
 
     return longestWord;
 };
+
+console.log(findLongestWord('The quick brown fox jumped over the lazy dog')); // 'jumped'
