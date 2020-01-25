@@ -6,13 +6,8 @@ const Transaction = {
 };
 
 const account = {
-    // Текущий баланс счета
     balance: 0,
-
-    // История транзакций
     transactions: [],
-
-    // Метод создает и возвращает объект транзакции.
 
     createTransaction(amount, type) {
         return {
@@ -22,16 +17,12 @@ const account = {
         };
     },
 
-    // Метод отвечающий за добавление суммы к балансу.
-
     deposit(amount) {
         this.balance += amount;
         return this.transactions.push(
             this.createTransaction(amount, Transaction.DEPOSIT),
         );
     },
-
-    // Метод отвечающий за снятие суммы с баланса.
 
     withdraw(amount) {
         if (amount > this.balance) {
@@ -44,13 +35,9 @@ const account = {
         }
     },
 
-    // Метод возвращает текущий баланс
-
     getBalance() {
         return this.balance;
     },
-
-    // Метод ищет и возвращает объект транзации по id
 
     getTransactionDetails(id) {
         for (const transaction of this.transactions) {
@@ -59,8 +46,6 @@ const account = {
             }
         }
     },
-
-    // Метод возвращает количество средств
 
     getTransactionTotal(type) {
         let total = 0;

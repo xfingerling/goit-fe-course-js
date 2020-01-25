@@ -1,29 +1,41 @@
 'use strict';
 
-// function topSalary(salaries) {
-//     let maxSalary = 0;
-//     let stafName = null;
+function findBestEmployee(employees) {
+    let topSalary = 0;
+    let topName;
 
-//     for (const [name, salary] of Object.entries(salaries)) {
-//         if (maxSalary < salary) {
-//             maxSalary = salary;
-//             stafName = name;
-//         }
-//     }
-
-//     return stafName;
-// }
-
-function findBestEmployee(salaries) {
-    let maxSalary = 0;
-    let stafName;
-
-    for (const name in salaries) {
-        if (maxSalary < salaries[name]) {
-            maxSalary = salaries[name];
-            stafName = name;
+    for (const name in employees) {
+        if (topSalary < employees[name]) {
+            topSalary = employees[name];
+            topName = name;
         }
     }
 
-    return stafName;
+    return topName;
 }
+
+console.log(
+    findBestEmployee({
+        ann: 29,
+        david: 35,
+        helen: 1,
+        lorence: 99,
+    }),
+); // lorence
+
+console.log(
+    findBestEmployee({
+        poly: 12,
+        mango: 17,
+        ajax: 4,
+    }),
+); // mango
+
+console.log(
+    findBestEmployee({
+        lux: 147,
+        david: 21,
+        kiwi: 19,
+        chelsy: 38,
+    }),
+); // lux
