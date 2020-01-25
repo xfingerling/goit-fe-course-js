@@ -7,7 +7,7 @@ let total = 0;
 do {
     input = prompt('Введите число', '');
 
-    if (input === '' || input === null) {
+    if (input === null) {
         continue;
     } else if (Number.isNaN(+input)) {
         alert('Было введено не число, попробуйте еще раз');
