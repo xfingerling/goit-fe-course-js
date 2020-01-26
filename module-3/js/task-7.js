@@ -19,7 +19,7 @@ const account = {
 
     deposit(amount) {
         this.balance += amount;
-        return this.transactions.push(
+        this.transactions.push(
             this.createTransaction(amount, Transaction.DEPOSIT),
         );
     },
@@ -29,7 +29,7 @@ const account = {
             alert('Недостаточно средств');
         } else {
             this.balance -= amount;
-            return this.transactions.push(
+            this.transactions.push(
                 this.createTransaction(amount, Transaction.WITHDRAW),
             );
         }
@@ -53,8 +53,6 @@ const account = {
         for (const transaction of this.transactions) {
             if (type === transaction.type) {
                 total += transaction.amount;
-            } else {
-                continue;
             }
         }
         return total;

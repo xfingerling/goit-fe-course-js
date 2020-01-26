@@ -1,7 +1,11 @@
 'use strict';
 
 const countTotalSalary = function(employees) {
-    return Object.values(employees).reduce((a, b) => a + b, 0);
+    let result = 0;
+    for (const salary of Object.values(employees)) {
+        result += salary;
+    }
+    return result;
 };
 
 console.log(countTotalSalary({})); // 0
