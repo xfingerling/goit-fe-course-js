@@ -17,8 +17,9 @@ do {
     }
 } while (input !== null);
 
-for (const number of numbers) {
-    total += number;
+if (!numbers.length === 0) {
+    for (const number of numbers) {
+        total += number;
+    }
 }
-
 alert(`Общая сумма чисел равна ${total}`);
