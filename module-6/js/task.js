@@ -47,7 +47,7 @@ console.log(calculateTotalBalance(users));
 // массив имен всех пользователей у которых есть друг с указанным именем
 const getUsersWithFriend = (users, friendName) =>
     users
-        .filter(user => user.friends.some(friend => friend === friendName))
+        .filter(user => user.friends.includes(friendName))
         .map(user => user.name);
 
 console.log(getUsersWithFriend(users, 'Briana Decker'));
@@ -63,17 +63,18 @@ console.log(getNamesSortedByFriendsCount(users));
 
 // массив всех умений всех пользователей в алфавитном порядке, без повторяющихся умений
 const getSortedUniqueSkills = users => {
-    function flatten(arr) {
-        return arr.reduce((flat, el) => {
-            return Array.isArray(el)
-                ? [...flat, ...flatten(el)]
-                : [...flat, el];
-        }, []);
-    }
+    const allSkills = [];
+    const uniqueSkills = [];
 
-    return flatten(users.map(user => user.skills))
-        .filter((skill, index, arr) => arr.indexOf(skill) === index)
-        .sort();
+    users.forEach(user => allSkills.push(...user.skills));
+
+    allSkills.forEach(skill => {
+        if (!uniqueSkills.includes(skill)) {
+            uniqueSkills.push(skill);
+        }
+    });
+
+    return uniqueSkills.sort();
 };
 
 console.log(getSortedUniqueSkills(users));
