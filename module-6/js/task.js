@@ -1,5 +1,7 @@
 'use strict';
 
+import users from './users.js';
+
 // массив имен всех пользователей
 const getUserNames = users => users.map(user => user.name);
 
