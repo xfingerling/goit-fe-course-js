@@ -63,10 +63,9 @@ console.log(getNamesSortedByFriendsCount(users));
 
 // массив всех умений всех пользователей в алфавитном порядке, без повторяющихся умений
 const getSortedUniqueSkills = users => {
-    const allSkills = [];
-    const uniqueSkills = [];
+    const allSkills = users.reduce((acc, user) => [...acc, ...user.skills], []);
 
-    users.forEach(user => allSkills.push(...user.skills));
+    const uniqueSkills = [];
 
     allSkills.forEach(skill => {
         if (!uniqueSkills.includes(skill)) {
