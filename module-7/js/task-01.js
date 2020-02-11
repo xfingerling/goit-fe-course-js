@@ -1,10 +1,10 @@
 'use strict';
 
-const liItem = document.querySelectorAll('.item');
+const listItem = document.querySelectorAll('.item');
 
-console.log(`В списке ${liItem.length} категории.`);
+console.log(`В списке ${listItem.length} категории.`);
 
-Array.from(liItem).forEach(el => {
+Array.from(listItem).forEach(el => {
     console.log(`Категория: ${el.firstElementChild.textContent}`);
     console.log(`Количество элементов: ${el.querySelectorAll('li').length}`);
 });
