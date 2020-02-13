@@ -3,7 +3,7 @@
 const input = document.getElementById('name-input');
 const output = document.getElementById('name-output');
 
-function text() {
+function changeOutput() {
     output.innerHTML = input.value;
 
     if (!input.value) {
@@ -11,4 +11,4 @@ function text() {
     }
 }
 
-input.addEventListener('input', text);
+input.addEventListener('input', changeOutput);
