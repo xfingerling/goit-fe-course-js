@@ -30,6 +30,4 @@ const createListItem = function(arr) {
     });
 };
 
-const gallery = document.getElementById('gallery');
-
 gallery.append(...createListItem(images));
