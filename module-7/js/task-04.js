@@ -1,6 +1,6 @@
 'use strict';
 
-let counterValue = value.innerHTML;
+let counterValue = 0;
 
 function increment() {
     value.innerHTML = ++counterValue;
