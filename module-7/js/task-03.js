@@ -18,14 +18,15 @@ const images = [
     },
 ];
 
-const createListItem = function(arr) {
+const createListItem = arr => {
     return arr.map(img => {
         const li = document.createElement('li');
-        const image = document.createElement('img');
-        image.src = img.url;
-        image.alt = img.alt;
 
-        li.append(image);
+        li.insertAdjacentHTML(
+            'beforeend',
+            `<img alt="${img.alt}" src="${img.url}">`,
+        );
+
         return li;
     });
 };
