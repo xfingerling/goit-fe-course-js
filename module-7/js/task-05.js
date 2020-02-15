@@ -1,14 +1,12 @@
-'use strict';
-
-const input = document.getElementById('name-input');
-const output = document.getElementById('name-output');
+const input = document.getElementById("name-input");
+const output = document.getElementById("name-output");
 
 function changeOutput() {
-    output.innerHTML = input.value;
+  output.innerHTML = input.value;
 
-    if (!input.value) {
-        output.innerHTML = 'незнакомец';
-    }
+  if (!input.value) {
+    output.innerHTML = "незнакомец";
+  }
 }
 
-input.addEventListener('input', changeOutput);
+input.addEventListener("input", changeOutput);
