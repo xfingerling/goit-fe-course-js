@@ -17,9 +17,6 @@ function createGallery() {
 
     link.classList.add("gallery__link");
     link.href = image.original;
-    link.onclick = function() {
-      return false;
-    };
 
     img.classList.add("gallery__image", "data-source");
     img.src = image.preview;
@@ -40,6 +37,7 @@ function showCover(e) {
   modal.classList.add("is-open");
 
   modalImg.src = target.dataset.source;
+  e.preventDefault();
 }
 
 function hideCover(e) {
