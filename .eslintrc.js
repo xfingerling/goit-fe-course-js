@@ -16,6 +16,6 @@ module.exports = {
     semi: ["error", "always"],
     quotes: ["error", "double"],
     "linebreak-style": 0,
-    "no-console": [false],
+    // "no-console": [false],
   },
 };

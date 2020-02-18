@@ -3,6 +3,7 @@ import galleryItems from "./gallery-items.js";
 const gallery = document.querySelector(".gallery");
 
 const modal = document.querySelector(".lightbox");
+const modalContent = document.querySelector(".lightbox__content");
 const modalImg = document.querySelector(".lightbox__image");
 
 gallery.append(...createGallery());
@@ -30,7 +31,7 @@ function createGallery() {
 }
 
 function showCover(e) {
-  const target = e.target;
+  const { target } = e;
 
   if (target.tagName !== "IMG") return;
 
@@ -40,26 +41,58 @@ function showCover(e) {
   e.preventDefault();
 }
 
-function hideCover(e) {
+function removeClass() {
   modalImg.src = "";
   modal.classList.remove("is-open");
 }
 
+function hideCoverBtn(e) {
+  const btn = e.target.closest("button");
+  if (btn) {
+    removeClass();
+  }
+}
+
+function hideCover(e) {
+  if (e.target === modalContent) {
+    removeClass();
+  }
+}
+
 function keysInput(e) {
+  const galleryItemsHref = galleryItems.map((el) => el.original);
+  const currentHref = galleryItemsHref.findIndex((el) => el === modalImg.src);
+  const nextPicture = galleryItemsHref[currentHref + 1];
+  const prevPicture = galleryItemsHref[currentHref - 1];
+
   switch (e.code) {
     case "Escape":
       modalImg.src = "";
       modal.classList.remove("is-open");
+
       break;
 
     case "ArrowRight":
+      if (nextPicture) {
+        modalImg.src = nextPicture;
+      }
       break;
 
     case "ArrowLeft":
+      if (prevPicture) {
+        modalImg.src = prevPicture;
+      }
+
+      break;
+
+    default:
       break;
   }
 }
 
 gallery.addEventListener("click", showCover);
+
 modal.addEventListener("click", hideCover);
+modal.addEventListener("click", hideCoverBtn);
+
 document.addEventListener("keyup", keysInput);
